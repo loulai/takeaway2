@@ -21,7 +21,7 @@ class Dish
 	end
 
 	def price
-		self.line_item[0][@dish_name.to_sym].to_i #need to refer to index
+		self.line_item[0][@dish_name.to_sym].to_i #need to refer to index, fuck
 	end
 
 
