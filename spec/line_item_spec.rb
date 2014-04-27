@@ -6,10 +6,6 @@ describe "Line Item" do
 	let (:burrito) {Dish.new("burrito", 5)}
 
 	context "when created" do
-	
-		it "has a Dish as one of its components" do
-			expect(LineItem.new(burrito, 3).dish_name).to eq "burrito"
-		end
 
 		it "has the quantity of Dishes as one of its components" do
 			expect(LineItem.new(burrito, 3).quantity).to eq 3
@@ -20,6 +16,19 @@ describe "Line Item" do
 		end
 
 	end
+
+
+	context "returning information about the Dish" do
+
+		it "can return the name of the dish it contains" do
+			expect(LineItem.new(burrito, 3).dish_name).to eq "burrito"
+		end
+
+		it ""
+
+	end
+
+
 
 
 end

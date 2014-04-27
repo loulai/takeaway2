@@ -9,10 +9,25 @@ describe "Order" do
 
 	let (:my_line_item) {LineItem.new(burrito, 3)}
 	let (:another_line_item) {LineItem.new(pie)}
+
+	let (:my_order) {Order.new([my_line_item, another_line_item], 15)} #forced est for now}
 	
-	it "has an array of LineItems as one of its components" do
-		order = Order.new([my_line_item], 15) #forced est for now
-		expect(order.list_of_line_items).to eq [my_line_item]
+	context "upon creation" do
+
+		it "has an array of LineItems as one of its components" do
+			expect(my_order.list_of_line_items).to eq [my_line_item, another_line_item]
+		end
+
+		before do
+			my_order.stub(:estimated_total_price).and_return(15)
+		end
+
+		it "has an estimated total price as one of its components" do
+			expect(my_order.estimated_total_price).to eq 15
+		end
+
 	end
+
+	#but how to test for random, wrong estimate?
 
 end

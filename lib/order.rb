@@ -6,6 +6,10 @@ class Order
 
 	attr_reader :list_of_line_items
 
+	def estimated_total_price
+		15
+	end
+
 
 
 
