@@ -1,15 +1,11 @@
 require "dish"
 
 describe "dish" do
+	
+	it "has a name" do
+		burrito = Dish.new("burrito", 5)
+		expect(burrito.name).to eq "burrito"
+	end
 
-		let (:dish_one) {Dish.new("curry", 8)}
-
-		it "is put into a line item upon initialization" do
-			expect(dish_one.line_item.count).to eq 1
-		end
-
-		it "has a price" do
-			expect(dish_one.price).to eq 8
-		end
 
 end
