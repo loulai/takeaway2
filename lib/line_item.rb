@@ -11,6 +11,10 @@ class LineItem
 
 	attr_reader :quantity
 
+	def line_price
+		@dish.price * quantity
+	end
+
 
 
 end
