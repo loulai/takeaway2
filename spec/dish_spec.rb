@@ -1,6 +1,6 @@
 require "dish"
 
-describe "dish" do
+describe "Dish" do
 
 	let (:burrito) {Dish.new("burrito", 5)}
 	

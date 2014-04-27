@@ -1,7 +1,7 @@
 require "line_item"
 
 
-describe "line_item" do
+describe "Line Item" do
 
 	let (:burrito) {Dish.new("burrito", 5)}
 
@@ -11,7 +11,7 @@ describe "line_item" do
 			expect(LineItem.new(burrito, 3).dish_name).to eq "burrito"
 		end
 
-		it "has a quantity as one of its components" do
+		it "has the quantity of Dishes as one of its components" do
 			expect(LineItem.new(burrito, 3).quantity).to eq 3
 		end
 
