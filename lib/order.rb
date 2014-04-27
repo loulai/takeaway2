@@ -13,6 +13,44 @@ class Order
 		@list_order_prices.inject(:+)
 	end
 
-# can list all the prices if can be bothered
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# can list all the prices if can be bothered

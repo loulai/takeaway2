@@ -10,7 +10,7 @@ describe "Order" do
 	let (:my_line_item) {LineItem.new(burrito, 3)}
 	let (:another_line_item) {LineItem.new(pie)}
 
-	let (:my_order) {Order.new([my_line_item, another_line_item], 15)} #forced est for now}
+	let (:my_order) {Order.new([my_line_item, another_line_item], 19)}
 	
 	context "upon creation" do
 
@@ -24,6 +24,12 @@ describe "Order" do
 
 	end
 
-	#but how to test for random, wrong estimate?
+	context "ordering" do
+		
+		it "will raise an error when wrong order price is given" do
+		expect(my_order.place_order).to raise_error(RuntimeError)
+		end
+
+	end
 
 end
