@@ -24,7 +24,12 @@ describe "Line Item" do
 			expect(LineItem.new(burrito, 3).dish_name).to eq "burrito"
 		end
 
-		it "can return total price, meaning the price of the dish multiplied by given quantity" do
+	end
+
+
+	context "line item's total price" do
+
+		it "can return the price of the dish multiplied by quantity specified" do
 			expect(LineItem.new(burrito, 3).line_price).to eq 15
 		end
 
@@ -34,3 +39,5 @@ describe "Line Item" do
 
 
 end
+
+#might want to refactor to have a "let" thingy for LineItem.new

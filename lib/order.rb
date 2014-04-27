@@ -7,9 +7,14 @@ class Order
 	attr_reader :list_of_line_items
 
 	def estimated_total_price
-		15
+		# =[LineItem.new(Dish.new("burrito", 5), 3), LineItem.new(Dish.new("pie", 4))]
+		# = [my_line_item, another_line_item]
+		@list_order_prices = list_of_line_items.map {|individual_line_item| individual_line_item.line_price }
+		# => [15, 4]
+		@list_order_prices.inject(:+)
 	end
 
+# can list all the prices? wanna do that?
 
 
 
