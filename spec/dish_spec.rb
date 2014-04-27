@@ -1,10 +1,15 @@
 require "dish"
 
 describe "dish" do
+
+	let (:burrito) {Dish.new("burrito", 5)}
 	
 	it "has a name" do
-		burrito = Dish.new("burrito", 5)
 		expect(burrito.name).to eq "burrito"
+	end
+
+	it "has a price" do
+		expect(burrito.price).to eq 5
 	end
 
 
