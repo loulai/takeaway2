@@ -18,12 +18,9 @@ describe "Order" do
 			expect(my_order.list_of_line_items).to eq [my_line_item, another_line_item]
 		end
 
-
-		it "has an estimated total price as one of its components" do
-			expect(my_order.estimated_total_price).to eq 15
+		it "knows the correct total price" do
+			expect(my_order.correct_total_price).to eq 19
 		end
-
-
 
 	end
 
