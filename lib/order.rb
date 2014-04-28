@@ -1,8 +1,5 @@
-require "twilio_body"
 
 class Order
-
-	include Text_body
 
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
@@ -30,7 +27,6 @@ class Order
 		else 
 			 @estimate_status = false
 		end
-		
 	
 	end
 
