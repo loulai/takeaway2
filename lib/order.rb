@@ -31,44 +31,4 @@ class Order
 	
 	end
 
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# can list all the prices if can be bothered

@@ -15,6 +15,4 @@ class LineItem
 		@dish.price * how_many_dishes
 	end
 
-
-
 end
