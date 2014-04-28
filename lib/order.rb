@@ -1,4 +1,8 @@
+require "twilio_body"
+
 class Order
+
+	include Text_body
 
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
@@ -16,7 +20,14 @@ class Order
 	end
 
 	def place_order
-		raise "you cannot math" if estimated_total_price != correct_total_price
+	
+		if estimated_total_price != correct_total_price
+			return "you cannot math"
+		#this is only temporary
+
+		else send_text
+		end
+
 	end
 
 

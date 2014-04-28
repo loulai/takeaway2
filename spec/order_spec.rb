@@ -1,6 +1,6 @@
 require "order"
 require "dish"
-require "send_sms"
+require "twilio_body"
 
 
 describe "Order" do
@@ -27,12 +27,12 @@ describe "Order" do
 
 	context "ordering" do
 		
-		# it "will raise an error when estimated total price is wrong" do
-		# expect(my_order.place_order).to raise_error(RuntimeError)
-		# end
+		it "will raise an error when estimated total price is wrong" do
+			expect(my_order.place_order).to eq "you cannot math"
+		end
 
 		it "will send a text message when given the correct price" do
-			expect
+			expect(my_order.place_order).to eq true
 		end
 
 	end
