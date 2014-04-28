@@ -4,7 +4,8 @@ class Order
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
 		@estimated_total_price = estimated_total_price
-		@estimate_status = "to be confirmed"
+		@estimate_status = " "
+		is_price_estimate_correct?
 	end
 
 	attr_reader :list_of_line_items
