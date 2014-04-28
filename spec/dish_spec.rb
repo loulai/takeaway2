@@ -2,14 +2,14 @@ require "dish"
 
 describe "Dish" do
 
-	let (:burrito) {Dish.new("burrito", 5)}
+	let (:salmon_teriyaki) {Dish.new("salmon terikayi", 12)}
 	
 	it "has a name" do
-		expect(burrito.name).to eq "burrito"
+		expect(salmon_teriyaki.name).to eq "salmon terikayi"
 	end
 
 	it "has a price" do
-		expect(burrito.price).to eq 5
+		expect(salmon_teriyaki.price).to eq 12
 	end
 
 
