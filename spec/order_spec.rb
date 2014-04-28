@@ -28,20 +28,19 @@ describe "Order" do
 	end
 
 	context "text notification when price is correct" do
-
 		
 		it "will raise an error when estimated total price is wrong" do
-			expect(order_with_wrong_estimate.place_order).to eq "you cannot math"
+			expect(order_with_wrong_estimate.is_price_estimate_correct?).to eq false
 		end
 
 	end
 
-	context "text notification when price is correct" do
+	# context "text notification when price is correct" do
 
-		it "will send a text message when given the correct price" do
-			expect(my_order.place_order).to eq true
-		end
+	# 	it "will send a text message when given the correct price" do
+	# 		expect(my_order.place_order).to eq true
+	# 	end
 
-	end
+	# end
 
 end

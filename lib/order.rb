@@ -6,6 +6,8 @@ class Order
 
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
+		@estimated_total_price = estimated_total_price
+		@estimate_status = "to be confirmed"
 	end
 
 	attr_reader :list_of_line_items
@@ -16,18 +18,20 @@ class Order
 		# list_of_line_items = [my_line_item, another_line_item]
 		@list_order_prices = list_of_line_items.map {|individual_line_item| individual_line_item.line_price }
 		# => [15, 4]
-		@list_order_prices.inject(:+)
+		@correct_total_price = @list_order_prices.inject(:+)
+		@correct_total_price
 	end
 
-	def place_order
-	
-		if estimated_total_price != self.correct_total_price
-			return "you cannot math"
-		#this is only temporary
+	def is_price_estimate_correct?
 
-		else send_text
+		if correct_total_price == estimated_total_price
+			@estimate_status = true
+
+		else 
+			 @estimate_status = false
 		end
-
+		
+	
 	end
 
 
