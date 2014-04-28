@@ -11,7 +11,9 @@ describe "Order" do
 	let (:my_line_item) {LineItem.new(burrito, 3)}
 	let (:another_line_item) {LineItem.new(pie)}
 
-	let (:my_order) {Order.new([my_line_item, another_line_item], 18)}
+	let (:my_order) {Order.new([my_line_item, another_line_item], 19)}
+	let (:order_with_wrong_estimate) {Order.new([my_line_item, another_line_item], 18)}
+
 	
 	context "upon creation" do
 
@@ -25,11 +27,16 @@ describe "Order" do
 
 	end
 
-	context "ordering" do
+	context "text notification when price is correct" do
+
 		
 		it "will raise an error when estimated total price is wrong" do
-			expect(my_order.place_order).to eq "you cannot math"
+			expect(order_with_wrong_estimate.place_order).to eq "you cannot math"
 		end
+
+	end
+
+	context "text notification when price is correct" do
 
 		it "will send a text message when given the correct price" do
 			expect(my_order.place_order).to eq true

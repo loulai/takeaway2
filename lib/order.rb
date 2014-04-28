@@ -21,7 +21,7 @@ class Order
 
 	def place_order
 	
-		if estimated_total_price != correct_total_price
+		if estimated_total_price != self.correct_total_price
 			return "you cannot math"
 		#this is only temporary
 
