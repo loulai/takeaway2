@@ -29,13 +29,19 @@ describe "Order" do
 
 	context "knows and compares prices" do
 		
-		it "will raise an error when estimated total price is wrong" do
+		it "will know when estimated total price is wrong" do
 			expect(dinner_with_wrong_estimate.is_price_estimate_correct?).to eq false
 		end
 
-		it "will return true when given the correct price" do
+		it "will know when the price given is right" do
 			expect(my_dinner.is_price_estimate_correct?).to eq true
 		end
+
+		it "will raise an error message if the price is wrong" do
+			expect(dinner_with_wrong_estimate.place_order).to raise_error(RuntimeError)
+		end
+
+
 
 	end
 
