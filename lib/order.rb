@@ -4,7 +4,6 @@ class Order
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
 		@estimated_total_price = estimated_total_price
-		@estimate_status = " "
 		is_price_estimate_correct?
 	end
 
@@ -21,14 +20,20 @@ class Order
 	end
 
 	def is_price_estimate_correct?
-
 		if correct_total_price == estimated_total_price
 			@estimate_status = true
-
 		else 
 			 @estimate_status = false
 		end
-	
+	end
+
+	def place_order
+		if @estimate_status == false
+			raise "You guessed the price wrong!"
+
+		else @estimate_status == true
+			"execute send_text"
+		end
 	end
 
 end

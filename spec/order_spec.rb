@@ -38,10 +38,12 @@ describe "Order" do
 		end
 
 		it "will raise an error message if the price is wrong" do
-			expect(dinner_with_wrong_estimate.place_order).to raise_error(RuntimeError)
+			expect{dinner_with_wrong_estimate.place_order}.to raise_error(RuntimeError)
 		end
 
-
+		it "will send a text message when the price given is correct" do
+			expect(my_dinner.place_order).to eq "execute send_text"
+		end
 
 	end
 
