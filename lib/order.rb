@@ -1,6 +1,8 @@
 
 class Order
 
+	include Text_body
+
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
 		@estimated_total_price = estimated_total_price
@@ -31,8 +33,8 @@ class Order
 		if @estimate_status == false
 			raise "You guessed the price wrong!"
 
-		else @estimate_status == true
-			"execute send_text"
+		else @estimate_status
+			send_text
 		end
 	end
 
