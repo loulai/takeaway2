@@ -1,7 +1,5 @@
 module Text_body
-
 	
-
 	def send_text
 			
 			require 'twilio-ruby'
