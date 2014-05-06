@@ -2,7 +2,6 @@ require "order"
 require "dish"
 require "twilio_body"
 
-
 describe "Order" do
 
 	let (:salmon_teriyaki) {Dish.new("salmon terikayi", 100)}
@@ -20,7 +19,7 @@ describe "Order" do
 		it "has an array of LineItems as one of its components" do
 			expect(my_dinner.list_of_line_items).to eq [appetizer, main_course]
 		end
-
+		
 		it "knows the correct total price" do
 			expect(my_dinner.correct_total_price).to eq 240
 		end
@@ -39,10 +38,6 @@ describe "Order" do
 
 		it "will raise an error message if the price is wrong" do
 			expect{dinner_with_wrong_estimate.place_order}.to raise_error(RuntimeError)
-		end
-
-		it "will print a detailed receipt" do
-			expect(my_dinner.place_order).to receive(my_dinner.print_receipt)
 		end
 
 	end

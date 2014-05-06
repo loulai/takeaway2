@@ -1,4 +1,4 @@
-module Text_body
+class Text
 
 	def send_text(body)
 			account_sid = 'AC81dba0a9bd8bb6fc2be33419f028a3ab'

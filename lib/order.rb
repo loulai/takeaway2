@@ -1,8 +1,6 @@
 
 class Order
 
-include Text_body
-
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
 		@estimated_total_price = estimated_total_price
@@ -24,8 +22,19 @@ include Text_body
 	def is_price_estimate_correct?
 		if correct_total_price == estimated_total_price
 			@estimate_status = true
+			true
 		else 
 			 @estimate_status = false
+			 false
+		end
+	end
+
+	def place_order
+		if @estimate_status == false
+			raise "You guessed the price wrong!"
+
+		else
+			send_text("Thank you dear customer, your order will arrive in #{order_time}")
 		end
 	end
 
@@ -34,13 +43,14 @@ include Text_body
 		"#{t.hour}:#{t.min}"
 	end
 
-	def place_order
-		if @estimate_status == false
-			raise "You guessed the price wrong!"
-
-		else @estimate_status
-			send_text("Thank you dear customer, your order will arrive in #{order_time}")
-		end
+	def send_text(body)
+			account_sid = 'AC81dba0a9bd8bb6fc2be33419f028a3ab'
+			auth_token = '44d8a2f7650bd77ac7caaae2ca56c8d1'
+			@client = Twilio::REST::Client.new account_sid, auth_token
+			 
+			message = @client.account.sms.messages.create(:body => body,
+			    :to => "+447760725881",     
+			    :from => "+441353210104")
 	end
 
 end
