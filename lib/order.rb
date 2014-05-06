@@ -1,7 +1,7 @@
 
 class Order
 
-	include Text_body
+include Text_body
 
 	def initialize(list_of_line_items, estimated_total_price)
 		@list_of_line_items = list_of_line_items
