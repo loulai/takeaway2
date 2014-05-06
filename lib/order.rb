@@ -29,12 +29,17 @@ include Text_body
 		end
 	end
 
+	def order_time
+		t = Time.new + 600
+		"#{t.hour}:#{t.min}"
+	end
+
 	def place_order
 		if @estimate_status == false
 			raise "You guessed the price wrong!"
 
 		else @estimate_status
-			send_text
+			send_text("Thank you dear customer, your order will arrive in #{order_time}")
 		end
 	end
 
