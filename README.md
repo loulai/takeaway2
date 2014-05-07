@@ -2,11 +2,13 @@ Greetings Tony
 ===
 This is the updated, edited version
 ---
-* I've included Twilio and a timestamp now.
+* Included Twilio and a timestamp now.
 
-* I also changed the if/else/elsif bit of code in order.rb, method *place_order*.
+* Changed the if/else/elsif bit of code in order.rb, method *place_order*.
 
 * In order.rb, *is_price_estimate_correct* now actually returns true/false instead of only assigning it to @estimate_status.
+
+* Stubbed time to test text sending function.
 
 
 FAIL

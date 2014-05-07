@@ -4,13 +4,13 @@ require "dish"
 
 describe "Order" do
 
-	let (:salmon_teriyaki) {Dish.new("salmon terikayi", 100)}
-	let (:seaweed_salad) {Dish.new("seaweed salad", 40)}
+	let (:salmon_teriyaki)           {Dish.new("salmon terikayi", 100)}
+	let (:seaweed_salad)             {Dish.new("seaweed salad", 40)   }
 
-	let (:main_course) {LineItem.new(salmon_teriyaki, 2)}
-	let (:appetizer) {LineItem.new(seaweed_salad)}
+	let (:main_course)                {LineItem.new(salmon_teriyaki, 2)}
+	let (:appetizer)                  {LineItem.new(seaweed_salad)}
 
-	let (:my_dinner) {Order.new([appetizer, main_course], 240)}
+	let (:my_dinner)                  {Order.new([appetizer, main_course], 240)}
 	let (:dinner_with_wrong_estimate) {Order.new([appetizer, main_course], 235)}
 
 	
@@ -51,8 +51,6 @@ describe "Order" do
 			expect(my_dinner).to receive(:send_text).with("Thank you dear customer, your order will arrive in #{stubbed_time}")
 			my_dinner.place_order
 		end
-
-
 
 	end
 

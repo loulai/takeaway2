@@ -13,7 +13,7 @@ class Order
 
 	def correct_total_price
 		# list_of_line_items = [my_line_item, another_line_item]
-		@list_order_prices = list_of_line_items.map {|individual_line_item| individual_line_item.line_price }
+		@list_order_prices   = list_of_line_items.map {|individual_line_item| individual_line_item.line_price }
 		# => [15, 4]
 		@correct_total_price = @list_order_prices.inject(:+)
 		@correct_total_price
@@ -45,11 +45,11 @@ class Order
 
 	def send_text(body)
 			account_sid = 'AC81dba0a9bd8bb6fc2be33419f028a3ab'
-			auth_token = '44d8a2f7650bd77ac7caaae2ca56c8d1'
-			@client = Twilio::REST::Client.new account_sid, auth_token
+			auth_token  = '44d8a2f7650bd77ac7caaae2ca56c8d1'
+			@client     = Twilio::REST::Client.new account_sid, auth_token
 			 
 			message = @client.account.sms.messages.create(:body => body,
-			    :to => "+447760725881",     
+			    :to   => "+447760725881",     
 			    :from => "+441353210104")
 	end
 
