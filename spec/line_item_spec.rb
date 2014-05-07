@@ -3,11 +3,11 @@ require "line_item"
 
 describe "Line Item" do
 
-	let (:salmon_teriyaki) {Dish.new("salmon terikayi", 100)}
-	let (:seaweed_salad) {Dish.new("seaweed salad", 40)}
+	let (:salmon_teriyaki)           {Dish.new("salmon terikayi", 100)}
+	let (:seaweed_salad)             {Dish.new("seaweed salad", 40)   }
 
-	let (:main_course) {LineItem.new(salmon_teriyaki, 2)}
-	let (:appetizer) {LineItem.new(seaweed_salad)}
+	let (:main_course)                {LineItem.new(salmon_teriyaki, 2)}
+	let (:appetizer)                  {LineItem.new(seaweed_salad)}
 
 	context "when created" do
 
@@ -21,7 +21,6 @@ describe "Line Item" do
 
 	end
 
-
 	context "returning information about the Dish" do
 
 		it "can return the name of the dish it contains" do
@@ -30,7 +29,6 @@ describe "Line Item" do
 
 	end
 
-
 	context "line item's total price" do
 
 		it "can return the price of the dish multiplied by quantity specified" do
@@ -38,9 +36,6 @@ describe "Line Item" do
 		end
 
 	end
-
-
-
 
 end
 
