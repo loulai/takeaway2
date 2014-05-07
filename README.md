@@ -1,6 +1,6 @@
 Greetings Tony
 ===
-This is the updated, edited version
+This is the edited version
 ---
 * Included Twilio and a timestamp now.
 
