@@ -1,6 +1,6 @@
 require "order"
 require "dish"
-require "twilio_body"
+
 
 describe "Order" do
 
@@ -27,6 +27,11 @@ describe "Order" do
 	end
 
 	context "knows and compares prices" do
+
+		before do
+			t = Time.new + 600
+			my_dinner.stub(:order_time).and_return("#{t.hour}:#{t.min}")
+		end
 		
 		it "will know when estimated total price is wrong" do
 			expect(dinner_with_wrong_estimate.is_price_estimate_correct?).to eq false
@@ -36,9 +41,18 @@ describe "Order" do
 			expect(my_dinner.is_price_estimate_correct?).to eq true
 		end
 
+
 		it "will raise an error message if the price is wrong" do
 			expect{dinner_with_wrong_estimate.place_order}.to raise_error(RuntimeError)
 		end
+
+		it "will send a text when price is right" do
+			stubbed_time = my_dinner.order_time
+			expect(my_dinner).to receive(:send_text).with("Thank you dear customer, your order will arrive in #{stubbed_time}")
+			my_dinner.place_order
+		end
+
+
 
 	end
 
