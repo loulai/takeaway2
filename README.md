@@ -4,9 +4,9 @@ This is the edited version
 ---
 * Twilio is now part of the executeable code.
 
-* In order.rb, method *place_order*, edited the *if/else/elsif* statement.
+* In *order.rb*, under method *place_order*, I've edited the *if/else/elsif* statement.
 
-* In order.rb, method *is_price_estimate_correct* now actually returns true/false instead of only assigning it to @estimate_status.
+* In *order.rb*, method *is_price_estimate_correct* now actually returns true/false instead of only assigning it to @estimate_status.
 
 * Stubbed time to test text sending function.
 
