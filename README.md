@@ -8,28 +8,6 @@ This is the edited version
 
 * Stubbed time to test text sending function.
 
-FAIL
-====
-
-You haven't stubbed the twillio client and it doesn't actually send the text!!
-
-Your ruby could be more idiomatic for instance is_price_estimate_correct should return a value rather than setting an instance variable.
-
-```
-raise "You guessed the price wrong!" unless is_price_estimate_correct?
-```
-
-This doesn't anything else is always true, to evaluate a condition you need to use elsif.
-```
-else @estimate_status == true
-```
-Also @estimate_status == true is pointless you can just do @estimate_status so you should have
-```
-elsif @estimate_status
-```
-
-Fix your white space and line spacing
-
 takeaway3
 =========
 take three!
