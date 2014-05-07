@@ -66,5 +66,5 @@ Here is an example of placing an order in irb:
 
  #placing my order
  my_awesome_japanese_dinner.place_order
- => "execute send_text" #this is meant to actually send a text
+ => *the customer should recieve an actual text*
 ```
